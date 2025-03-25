@@ -1,96 +1,101 @@
-Selenium Learning Guide with Examples
-Author :- Durgesh Sawant.
+# 🚀 Selenium Learning Guide with Examples
 
-📌 Introduction
-This repository is a comprehensive guide to learning Selenium with Java, covering essential concepts and integrating various tools such as TestNG, Maven, Allure Report, Jenkins, and more. This guide provides practical examples to help you master Selenium automation testing.
+**Author** – *Durgesh Sawant*
 
-🚀 Tech Stack for Selenium
-Technology	Description
-Java	Programming language for Selenium automation
-TestNG	Test framework for organizing and executing test cases
-Maven	Build automation tool to manage dependencies (pom.xml)
-Allure Report	Reporting framework for detailed test execution reports
-Jenkins	CI/CD tool to automate test execution
-GIT	Version control system to manage codebase
-log4j	Logging framework for better debugging (log4j.xml)
-Selenium	Browser automation framework
-Github	Code hosting platform for collaboration
-DDT (Apache POI)	Data-Driven Testing with Excel (Apache POI)
-Test Data	External test data storage (TestData.xlsx)
-📚 Topics Covered
-🔹 1. Selenium Basics
-Introduction to Selenium
-Setting up Selenium WebDriver
-Locators (ID, Name, XPath, CSS Selector, etc.)
-Handling Web Elements (Click, SendKeys, GetText)
-Browser Navigation (Back, Forward, Refresh)
-🔹 2. Advanced Selenium
-Handling Dropdowns and Alerts
-Handling Frames and Windows
-Mouse and Keyboard Actions (Actions Class)
-Taking Screenshots in Selenium
-Handling AJAX Elements
-Implicit and Explicit Waits
-🔹 3. TestNG (testng.xml)
-TestNG Installation and Setup
-Writing Test Cases using TestNG
-TestNG Annotations (@Test, @BeforeClass, @AfterClass, etc.)
-Assertions in TestNG
-Data-Driven Testing with TestNG (DataProvider)
-Parallel Execution with TestNG.xml
-🔹 4. Maven (pom.xml)
-Setting up Maven Project
-Adding Selenium and TestNG Dependencies
-Running Tests with Maven Commands
-🔹 5. Allure Report Integration
-Installing and Configuring Allure
-Generating Reports with Allure
-Analyzing Test Results with Allure Reports
-🔹 6. Jenkins for CI/CD
-Installing and Setting up Jenkins
-Running Selenium Tests from Jenkins
-Integrating Allure Reports in Jenkins
-🔹 7. GIT and GitHub
-Setting up GIT
-Pushing Selenium Project to GitHub
-Version Control Best Practices
-🔹 8. Logging with Log4j
-Setting up Log4j Configuration (log4j.xml)
-Logging Framework Implementation
-🔹 9. Data-Driven Testing (DDT) with Apache POI
-Reading Data from Excel Files (TestData.xlsx)
-Using Excel Data in Selenium Test Cases
-🔹 10. Test Data Management
-Creating and Managing Test Data
-Using External Files for Test Data
-🔧 Prerequisites
-Before getting started, ensure you have the following installed:
+---
 
-Java (JDK 8 or higher)
-Eclipse/IntelliJ IDE
-Maven
-Git
-Jenkins
-🛠 Installation Guide
-Clone the repository:
+## 📌 Introduction
 
-Open the project in Eclipse/IntelliJ
-Install dependencies using Maven:
-mvn clean install
-Run the test cases:
-mvn test
-Generate Allure Report:
-mvn allure:serve
-View test results in Jenkins (if configured)
-🎯 Contributing
-Contributions are welcome! Feel free to raise issues or submit PRs.
+This repository is a comprehensive guide to learning **Selenium with Java**. It covers essential automation testing concepts and integrates tools like **TestNG**, **Maven**, **Allure Reports**, **Jenkins**, and more. With practical code examples, this guide aims to make you confident in building robust automation frameworks from scratch.
 
-📜 License
-This project is licensed under the MIT License.
+---
 
-📞 Contact
-For queries or discussions, reach out via:
+## 🚀 Tech Stack for Selenium
 
-LinkedIn: linkedin.com/in/durgeshsawant
+| Technology      | Description                                          |
+|-----------------|------------------------------------------------------|
+| Java            | Programming language for Selenium automation         |
+| TestNG          | Test framework for organizing and executing tests    |
+| Maven           | Build tool for dependency management (`pom.xml`)     |
+| Allure Report   | Detailed and beautiful test execution reports        |
+| Jenkins         | CI/CD tool to automate and schedule test runs        |
+| GIT             | Version control system to track code changes         |
+| Log4j           | Logging framework for debugging and reporting        |
+| Selenium        | Browser automation library                           |
+| GitHub          | Hosting platform for version control & collaboration |
+| Apache POI      | Read/write Excel for Data-Driven Testing (DDT)       |
+| TestData.xlsx   | External Excel file for managing test data           |
 
-GitHub:  "https://github.com/DUSAWANT3"
+---
+
+## 📚 Topics Covered
+
+### 🔹 1. Selenium Basics
+- Introduction to Selenium
+- Setting up Selenium WebDriver
+- Locators (ID, Name, XPath, CSS Selector, etc.)
+- Interacting with Web Elements (Click, SendKeys, GetText)
+- Browser Navigation (Back, Forward, Refresh)
+
+### 🔹 2. Advanced Selenium
+- Handling Dropdowns and Alerts
+- Working with Frames and Windows
+- Mouse & Keyboard Actions (Actions Class)
+- Taking Screenshots
+- Handling AJAX Elements
+- Implicit vs Explicit Waits
+
+### 🔹 3. TestNG (`testng.xml`)
+- Installing and Setting Up TestNG
+- Writing Test Cases with TestNG
+- Annotations: `@Test`, `@BeforeClass`, `@AfterClass`, etc.
+- Using Assertions
+- Data Providers for DDT
+- Parallel Execution of Tests
+
+### 🔹 4. Maven (`pom.xml`)
+- Setting up Maven Project
+- Adding Selenium & TestNG Dependencies
+- Running Tests with Maven Commands
+
+### 🔹 5. Allure Report Integration
+- Installing & Configuring Allure
+- Generating Interactive Reports
+- Analyzing Test Execution Results
+
+### 🔹 6. Jenkins for CI/CD
+- Installing Jenkins
+- Running Selenium Tests from Jenkins Jobs
+- Publishing Allure Reports in Jenkins
+
+### 🔹 7. GIT & GitHub
+- Setting up Git in the Project
+- Pushing Code to GitHub
+- Best Practices for Version Control
+
+### 🔹 8. Logging with Log4j
+- Setting up Log4j Configuration (`log4j.xml`)
+- Implementing Logging in Test Scripts
+
+### 🔹 9. Data-Driven Testing with Apache POI
+- Reading Data from Excel (`TestData.xlsx`)
+- Executing Tests with External Data
+
+### 🔹 10. Test Data Management
+- Creating and Organizing Test Data Files
+- Using External Files for Flexible Data Control
+
+---
+
+## 🔧 Prerequisites
+
+Before starting, make sure you have the following installed:
+
+- ✅ Java JDK (8 or above)
+- ✅ Eclipse / IntelliJ IDEA
+- ✅ Maven
+- ✅ Git
+- ✅ Jenkins (Optional for CI/CD)
+
+---
+
