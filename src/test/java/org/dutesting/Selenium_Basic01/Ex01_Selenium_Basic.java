@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Ex01_Selenium_Basic {
 
@@ -13,9 +14,13 @@ public class Ex01_Selenium_Basic {
         // Set path to chromedriver if not already in system PATH
         // System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 
-        WebDriver driver = new ChromeDriver();
+       /* WebDriver driver = new ChromeDriver();
         driver.get("https://app.vwo.com");
         System.out.println("Page title: " + driver.getTitle());
-        driver.quit();
+        driver.quit(); */
+
+        FirefoxDriver driver = new FirefoxDriver();
+        driver.get("https://app.vwo.com");
+        System.out.println(driver.getTitle());
     }
 }
