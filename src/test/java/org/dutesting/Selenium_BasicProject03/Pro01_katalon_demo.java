@@ -12,7 +12,6 @@ public class Pro01_katalon_demo {
     //Open the URL - https://katalon-demo-cura.herokuapp.com/
     //Enter the username and password
     //Verify that the current URL changes to https://katalon-demo-cura.herokuapp.com/#appointment
-
     @Test
     @Description("Verify that the current URL changes to")
 
