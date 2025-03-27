@@ -42,6 +42,7 @@ public class Pro01_katalon_demo {
         System.out.println(driver.getCurrentUrl());
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/#appointment");
 
-        driver.quit();
+         driver.quit();
     }
+
 }
