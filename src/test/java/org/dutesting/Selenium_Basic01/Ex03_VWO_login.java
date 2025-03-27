@@ -24,6 +24,7 @@ public class Ex03_VWO_login {
         Assert.assertEquals(driver.getCurrentUrl(),"https://app.vwo.com/#/login");
 
        //get tital
+
         System.out.println("Titl == " + driver.getTitle());
      //   System.out.println(driver.getPageSource());
 
