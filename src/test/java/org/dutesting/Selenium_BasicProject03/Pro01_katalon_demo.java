@@ -20,6 +20,8 @@ public class Pro01_katalon_demo {
         WebDriver driver = new ChromeDriver();
         driver.get("https://katalon-demo-cura.herokuapp.com/");
 
+        driver.manage().window().maximize();
+
         System.out.println(driver.getCurrentUrl());
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
 
