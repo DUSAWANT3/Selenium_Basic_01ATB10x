@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-
 public class Ex03_VWO_login {
 
     @Test
