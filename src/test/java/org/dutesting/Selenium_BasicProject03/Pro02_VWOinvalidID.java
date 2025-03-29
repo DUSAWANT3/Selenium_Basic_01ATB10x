@@ -21,7 +21,7 @@ public class Pro02_VWOinvalidID {
     @Test
     @Description("To Verify the VWO login Funcanility with invalid ID")
 
-    public void VerifyVWOLogin() {
+    public void VerifyVWOLogin() throws InterruptedException {
         WebDriver driver = new EdgeDriver();
 
         driver.get("https://app.vwo.com/#/login");
@@ -44,8 +44,10 @@ public class Pro02_VWOinvalidID {
         WebElement buttonSubmit = driver.findElement(By.id("js-login-btn"));
         buttonSubmit.click();
 
+        Thread.sleep(4000);
+
         WebElement error_message = driver.findElement(By.className("notification-box-content"));
-       // Assert.assertEquals(error_message.getText(),"Your email, password, IP address or location did not match");
+        Assert.assertEquals(error_message.getText(),"Your email, password, IP address or location did not match");
 
        driver.quit();
     }
