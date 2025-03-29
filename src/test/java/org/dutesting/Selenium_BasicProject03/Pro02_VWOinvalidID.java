@@ -29,7 +29,6 @@ public class Pro02_VWOinvalidID {
         driver.manage().window().maximize();
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://app.vwo.com/#/login");
-
         //get tital
         System.out.println("Titl == " + driver.getTitle());
 
