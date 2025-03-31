@@ -24,10 +24,19 @@ public class Ex04_LintText {
         // class="text-link"
         // data-qa="bericafeqo">Start a free trial</a>
 
-        WebElement LinkText = driver.findElement(By.linkText("Start a free trial"));
+        //LinkText == Full text match
+
+      /*  WebElement LinkText = driver.findElement(By.linkText("Start a free trial"));
         LinkText.click();
 
         Thread.sleep(3000);
+        Assert.assertEquals(driver.getCurrentUrl(),"https://vwo.com/free-trial/?utm_medium=website&utm_source=login-page&utm_campaign=mof_eg_loginpage");
+*/
+
+        // PartialLinkText- Contains
+        WebElement LinkText = driver.findElement(By.partialLinkText("Start a free"));
+        LinkText.click();
+        Thread.sleep(2000);
         Assert.assertEquals(driver.getCurrentUrl(),"https://vwo.com/free-trial/?utm_medium=website&utm_source=login-page&utm_campaign=mof_eg_loginpage");
 
         driver.close();
