@@ -46,6 +46,7 @@ public class Pro02_VWOinvalidID {
 
         Thread.sleep(4000);
 
+
         WebElement error_message = driver.findElement(By.className("notification-box-content"));
         Assert.assertEquals(error_message.getText(),"Your email, password, IP address or location did not match");
 
