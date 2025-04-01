@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Pro03_VWOVerifywarningmsg {
-
     //login to VWO
     //click on 'Start a free trial' -link text /partial link text
     //give invalid id
