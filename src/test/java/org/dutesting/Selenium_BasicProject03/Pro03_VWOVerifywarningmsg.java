@@ -55,6 +55,5 @@ public class Pro03_VWOVerifywarningmsg {
         Assert.assertEquals(warningMsg.getText(),"The email address you entered is incorrect.");
 
         driver.close();
-
     }
 }
