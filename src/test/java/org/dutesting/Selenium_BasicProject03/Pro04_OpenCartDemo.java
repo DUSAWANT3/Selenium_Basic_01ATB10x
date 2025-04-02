@@ -12,11 +12,10 @@ import org.testng.annotations.Test;
 public class Pro04_OpenCartDemo {
     //Rejister on Opencart
 
-
     @Test
     @Description("Verify Open Cart Demo web Application")
     @Owner("Durgesh Sawant")
-    public void OpenCartDemoVerify() {
+    public void OpenCartDemoVerify() throws InterruptedException {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
@@ -29,7 +28,9 @@ public class Pro04_OpenCartDemo {
         WebElement RegisterButton = driver.findElement(By.xpath("//a[@class=\"btn btn-black navbar-btn\"]"));
         RegisterButton.click();
 
-        Assert.assertEquals(driver.getCurrentUrl(),"https://www.opencart.com/index.php?route=account/register");
+        Thread.sleep(15000);
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.opencart.com/index.php?route=account/register");
 
         WebElement UsernameField = driver.findElement(By.xpath("//*[@id=\"input-username\"]"));
         UsernameField.sendKeys("Raj123");
@@ -42,7 +43,5 @@ public class Pro04_OpenCartDemo {
 
         WebElement EmailField = driver.findElement(By.xpath("//*[@id=\"input-email\"]"));
         UsernameField.sendKeys("OKRAJ@email.com");
-
-
     }
 }
