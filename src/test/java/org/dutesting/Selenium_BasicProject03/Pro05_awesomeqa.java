@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Pro05_awesomeqa {
-
     @Test
     @Description("Verify and automate awesomeqa page elements")
     @Owner("Durgesh Sawant")
