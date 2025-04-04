@@ -30,14 +30,14 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
         WebElement SearchBox = driver.findElement(By.xpath("//input[@id=\"search\"]"));
         SearchBox.sendKeys("In");
 
-        Thread.sleep(2000); // Wait for suggestions to load
+       // Thread.sleep(2000); // Wait for suggestions to load
 
         // Step 2: Capture all suggested values
         List<WebElement> suggestions = driver.findElements(By.xpath("//div/ul/li[@role=\"option\"]"));
 
 
         // Step 3: Print all suggested values and select the desired one
-        String expectedValue = "Independence";  // Change as needed
+        String expectedValue = "Independence";
         boolean isMatched = false;
 
         for (WebElement suggestion : suggestions) {
