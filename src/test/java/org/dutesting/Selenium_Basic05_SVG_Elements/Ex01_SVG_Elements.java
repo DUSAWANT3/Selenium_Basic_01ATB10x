@@ -23,7 +23,7 @@ public class Ex01_SVG_Elements {
 
     @BeforeTest
     public void openBrowser() {
-        driver = new EdgeDriver();  // fixed redeclaration issue
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com/search");
     }
@@ -40,7 +40,7 @@ public class Ex01_SVG_Elements {
             svgElements.get(0).click();
         } else {
             System.out.println("SVG element not found.");
-            return;
+            return;  //exits the test early, so it doesn’t continue with the rest of the code.
         }
 
         // Wait (not ideal, but since you haven't used WebDriverWait yet)
