@@ -19,6 +19,7 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
     //Match and click the correct option if it matches the expected value.
     //Verify the selected value in the input field.
 
+
     public void HaandleDropdon() throws InterruptedException {
 
         WebDriver driver = new EdgeDriver();
