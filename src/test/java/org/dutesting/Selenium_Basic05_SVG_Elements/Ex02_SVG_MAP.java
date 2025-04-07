@@ -28,6 +28,7 @@ public class Ex02_SVG_MAP {
             System.out.println(state.getDomAttribute("aria-label"));
 
             if (state.getDomAttribute("aria-label").contains("Maharashtra"))
+              //Note: getDomAttribute() is used because standard getAttribute() may not always work with SVG elements.
             {
                 state.click();
             }
