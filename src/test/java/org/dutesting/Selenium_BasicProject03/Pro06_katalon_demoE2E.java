@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -45,6 +46,43 @@ public class Pro06_katalon_demoE2E {
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/#appointment");
 
         //on Katalon -Make Appointment page fill all information
+        //From dropdown select the Facility
+        WebElement FacilityDropdown = driver.findElement(By.xpath("//select[@id=\"combo_facility\"]"));
+        Select select = new Select(FacilityDropdown);
+
+        select.selectByIndex(2); //Seoul CURA Healthcare Center
+        //Verify selected value
+        String selectedFacility = select.getFirstSelectedOption().getText();
+        Assert.assertEquals(selectedFacility,"Seoul CURA Healthcare Center","Incorrect Facility selected!");
+
+    //Click on checkbox "Apply for hospital readmission"
+        driver.findElement(By.xpath("//input[@type=\"checkbox\"]")).click();
+       int a  = 3;
+     //click on rediobutton -Healthcare Program -None
+        WebElement HealthcareProgram = driver.findElement(By.xpath("//*[@class=\"radio-inline\"][3]"));
+       HealthcareProgram.click();
+        System.out.println(HealthcareProgram.getText());
+        Assert.assertEquals(HealthcareProgram.getText(),"None");
+
+    //Enter the visit date 07/04/2025
+       driver.findElement(By.xpath("//*[@id=\"txt_visit_date\"]")).sendKeys("07/04/2025");
+
+    //Enter Comment
+        WebElement comment = driver.findElement(By.xpath("//*[@id=\"txt_comment\"]"));
+        comment.sendKeys("Booking Appointment on 07/04/2025");
+
+     //click on book  Appointment
+     driver.findElement(By.xpath("//*[@type=\"submit\"]")).click();
+
+        //Verify the Appointment Confirmation
+        //*[@class="col-xs-offset-2 col-xs-8"]/div[@class="col-xs-4"]
+
+
+        // 11. Click on close menu and select "logout" from dropdown
+        WebElement toggle_btn = driver.findElement(By.xpath("//a[@id = \"menu-toggle\"]"));
+        toggle_btn.click();
+        WebElement logout = driver.findElement(By.xpath("//a[@ href = 'authenticate.php?logout']"));
+        logout.click();
 
 
        // driver.quit();
