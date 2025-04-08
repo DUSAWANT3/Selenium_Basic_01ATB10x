@@ -29,7 +29,6 @@ public class Ex01_CustomCalendar_DatePicker {
         while (!driver.findElement(By.className("//*[@class=\"ui-datepicker-title\"]")).getText().contains("July 2025")) {
             driver.findElement(By.className("//a[@data-handler=\"next\"]")).click(); // or prevButton
         }
-
         // Step 3: Select the date
         List<WebElement> dates = driver.findElements(By.xpath("//*[@data-handler=\"selectDay\"]"));
         for (WebElement date : dates) {
@@ -37,7 +36,6 @@ public class Ex01_CustomCalendar_DatePicker {
                 date.click();
                 break;
             }
-
         }
     }
 }
