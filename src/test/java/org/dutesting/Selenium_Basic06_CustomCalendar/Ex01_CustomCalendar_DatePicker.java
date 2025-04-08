@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Ex01_CustomCalendar_DatePicker {
-
 //Custom JavaScript Calendars (Most Common) -
 //Click to open the calendar popup, then select a date
     //Step 1- Click the date field to open the calendar.
