@@ -15,7 +15,7 @@ public class Ex01_CustomCalendar_DatePicker {
     //Step 2- Navigate to the appropriate month/year if necessary.
     //Step 3-Select the desired date
 @Test
-    public void Handle_CustomCalendar() {
+    public void Handle_CustomCalendar() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
@@ -23,6 +23,8 @@ public class Ex01_CustomCalendar_DatePicker {
 
 //Step 1- Click the date field to open the calendar.
         driver.findElement(By.xpath("//*[@id=\"date-picker\"]")).click();
+
+        Thread.sleep(3000);
 
 //Step 2- Navigate to the appropriate month/year if necessary.
         while (!driver.findElement(By.className("//*[@class=\"ui-datepicker-title\"]")).getText().contains("July 2025")) {
