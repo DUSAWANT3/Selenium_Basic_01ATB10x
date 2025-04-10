@@ -8,6 +8,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.SortedMap;
+import java.util.concurrent.ForkJoinPool;
 
 public class Ex01_Table_Static {
 
@@ -33,6 +35,21 @@ public class Ex01_Table_Static {
         List<WebElement> row1 = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr"));
         System.out.println("Row Size = "+row1.size());
 
+        //print Columns size
+        List<WebElement> Col = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr[1]/td"));
+        System.out.println("Columns Size = "+Col.size());
+         int i = 0;
+         int j = 0;
+       //Print all the table data
+        for (i = 1; i <= row1.size(); i++){ //find all rows
+            for(j=1; j<=Col.size() ; j++){ //in first row mow to all columns
+                String DynamicPath = FirstPart+i+SecondPart+j+ThiredPart;
+                //System.out.println(DynamicPath);
+
+                String Data = driver.findElement(By.xpath(DynamicPath)).getText();
+                System.out.println(Data);
+            }
+        }
         driver.close();
     }
 }
