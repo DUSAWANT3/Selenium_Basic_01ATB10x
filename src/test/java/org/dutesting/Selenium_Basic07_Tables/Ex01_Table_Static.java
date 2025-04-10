@@ -40,6 +40,8 @@ public class Ex01_Table_Static {
         System.out.println("Columns Size = " + Col.size());
         int i = 0;
         int j = 0;
+
+
         //Print all the table data
         for (i = 1; i <= row1.size(); i++) { //find all rows
             for (j = 1; j <= Col.size(); j++) { //in first row mow to all columns
@@ -47,8 +49,9 @@ public class Ex01_Table_Static {
                 //System.out.println(DynamicPath);
 
                 String Data = driver.findElement(By.xpath(DynamicPath)).getText();
-                System.out.println(Data);
+                System.out.print(Data + "  ");
             }
+            System.out.println();
         }
         // Print all the table data
         for (i = 1; i <= row1.size(); i++) { //find all rows
