@@ -15,7 +15,7 @@ public class Ex01_Table_Static {
 
     @Test
     @Description("Verify and validate tables")
-    public void handelsTabels(){
+    public void handelsTabels() {
 
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
@@ -23,33 +23,44 @@ public class Ex01_Table_Static {
         driver.get("https://www.testautomationcentral.com/demo/table_interaction.html");
 
         //xpath - //table[@class="min-w-full bg-white"]/tbody/tr[1]/td[2]  -- row & coloums
-        String FirstPart = "//table[@class=\"min-w-full bg-white\"]/tbody/tr[" ;
-        String SecondPart = "]/td[" ;
-        String ThiredPart = "]" ;
+        String FirstPart = "//table[@class=\"min-w-full bg-white\"]/tbody/tr[";
+        String SecondPart = "]/td[";
+        String ThiredPart = "]";
 
         //print row size
         int row = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr")).size();
-        System.out.println("Row size = " +row);
+        System.out.println("Row size = " + row);
 
         //print row size
         List<WebElement> row1 = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr"));
-        System.out.println("Row Size = "+row1.size());
+        System.out.println("Row Size = " + row1.size());
 
         //print Columns size
         List<WebElement> Col = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr[1]/td"));
-        System.out.println("Columns Size = "+Col.size());
-         int i = 0;
-         int j = 0;
-       //Print all the table data
-        for (i = 1; i <= row1.size(); i++){ //find all rows
-            for(j=1; j<=Col.size() ; j++){ //in first row mow to all columns
-                String DynamicPath = FirstPart+i+SecondPart+j+ThiredPart;
+        System.out.println("Columns Size = " + Col.size());
+        int i = 0;
+        int j = 0;
+        //Print all the table data
+        for (i = 1; i <= row1.size(); i++) { //find all rows
+            for (j = 1; j <= Col.size(); j++) { //in first row mow to all columns
+                String DynamicPath = FirstPart + i + SecondPart + j + ThiredPart;
                 //System.out.println(DynamicPath);
 
                 String Data = driver.findElement(By.xpath(DynamicPath)).getText();
                 System.out.println(Data);
             }
         }
+        // Print all the table data
+        for (i = 1; i <= row1.size(); i++) { //find all rows
+            List<WebElement> Col1 = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr[" + i + "]/td"));
+            for (j = 1; j <= Col1.size(); j++) { //in first row mow to all columns
+                WebElement cell = driver.findElement(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr[" + i + "]/td[" + j + "]"));
+                System.out.print(cell.getText() + " ");
+            }
+            System.out.println();
+        }
+
+
         driver.close();
     }
 }
