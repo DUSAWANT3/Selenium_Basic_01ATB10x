@@ -1,5 +1,4 @@
 package org.dutesting.Selenium_Basic07_Tables;
-
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,16 +7,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
 import java.util.List;
-
 public class Ex02_Tables {
-
     @Test
     @Description("Verify and validate tables")
     public void handelsTabels() {
 
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
-
         driver.get("https://awesomeqa.com/webtable1.html");
 
         WebElement table = driver.findElement(By.xpath("//table[@summary=\"Sample Table\"]/tbody"));
@@ -32,7 +28,6 @@ public class Ex02_Tables {
             }
             System.out.println();
         }
-
         driver.close();
     }
 }
