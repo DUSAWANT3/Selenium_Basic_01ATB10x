@@ -48,6 +48,7 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
                 isMatched = true;
                 break;
             }
+
         }
         // Step 4: Verify if the correct value is selected
         String selectedValue = SearchBox.getAttribute("value");
