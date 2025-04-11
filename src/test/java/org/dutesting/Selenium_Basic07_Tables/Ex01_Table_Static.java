@@ -23,7 +23,7 @@ public class Ex01_Table_Static {
 
         driver.get("https://www.testautomationcentral.com/demo/table_interaction.html");
 
-        //xpath - //table[@class="min-w-full bg-white"]/tbody/tr[1]/td[2]  -- row & coloums
+        //xpath - //table[@class="min-w-full bg-white"]/tbody/tr[1]/td[2]  --Cell row & coloums
         String FirstPart = "//table[@class=\"min-w-full bg-white\"]/tbody/tr[";
         String SecondPart = "]/td[";
         String ThiredPart = "]";
