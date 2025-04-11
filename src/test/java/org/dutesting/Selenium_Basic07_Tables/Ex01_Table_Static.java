@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -50,9 +51,20 @@ public class Ex01_Table_Static {
 
                 String Data = driver.findElement(By.xpath(DynamicPath)).getText();
                 System.out.print(Data + "  ");
+
+                if (Data.contains("Mike Johnson")) {
+                    String agepath = DynamicPath + "/following-sibling::td[1]";
+                    String age = driver.findElement(By.xpath(agepath)).getText();
+                    System.out.println("Mike Johnson age is = "+ age);
+
+                    Assert.assertEquals(age,"35","Not found correct data!");
+                    Assert.assertTrue(age.contains("35"), "Not found correct data!");
+                }
             }
             System.out.println();
         }
+
+
         // Print all the table data
         for (i = 1; i <= row1.size(); i++) { //find all rows
             List<WebElement> Col1 = driver.findElements(By.xpath("//table[@class=\"min-w-full bg-white\"]/tbody/tr[" + i + "]/td"));
