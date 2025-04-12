@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -61,18 +63,46 @@ public class Pro07_LoginPage {
         //Assert.assertEquals(forgotPassPage.getText(),"Forgot password");
 
         //click on Reset login but
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        WebElement ResetlogBut = driver.findElement(By.xpath("//div[@class=\"forgot-pwd-btn-conainer\"]/button[2]"));
 
-        driver.findElement(By.xpath("//div[@class=\"forgot-pwd-btn-conainer\"]/button[2]")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(ResetlogBut)).click();
 
         WebElement passkey = driver.findElement(By.xpath("//p[@class=\"infoMsg\"]"));
         System.out.println(passkey.getText());
 
         //Captcher and store the password and all msg in Password
-        String Password = new String(passkey.getText());
+        //Please use temporary password 'rahulshettyacademy' to Login.
+
+        String PasswordText = new String(passkey.getText());
+        String[] passwordArray = PasswordText.split("'");
+        //Ind 0-  Please use temporary password
+        //Ind 1 - rahulshettyacademy' to Login.
+        String[] password = passwordArray[1].split("'");
+        //Ind[0]  --rahulshettyacademy
+        //Ind[1] --  to Login.
+        System.out.println(password[0]);
+
+        //Click on Go to login but
+        WebElement goToLogingBut = driver.findElement(By.xpath("//div[@class=\"forgot-pwd-btn-conainer\"]/button[1]"));
+        goToLogingBut.click();
+
+        //WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(Username));
+
+        //login with valid id & Pass
+        Username.sendKeys(Username1);
+
+        PassWordloc.sendKeys(password[0]);
+
+        IAgreeCheckBox.click();
+
+        Singbut.click();
+
+     //Verify when user login succesfull the user ID should be match in loginn msg
 
 
 
-        driver.close();
+        //driver.close();
     }
 }
