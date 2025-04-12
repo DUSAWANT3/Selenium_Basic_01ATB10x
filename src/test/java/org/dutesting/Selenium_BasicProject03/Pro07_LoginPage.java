@@ -29,7 +29,7 @@ public class Pro07_LoginPage {
         long time = 2;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
 
-         String Username1 = "OKRAJ";
+         String Username1 = "OKRAJ1";
         //login with invalid id captcher the error message
         WebElement Username = driver.findElement(By.xpath("//*[@id=\"inputUsername\"]"));
         Username.sendKeys(Username1);
@@ -99,10 +99,15 @@ public class Pro07_LoginPage {
 
         Singbut.click();
 
-     //Verify when user login succesfull the user ID should be match in loginn msg
+     //Verify when user login succesfull the user ID should be match in login msg
+      WebElement loggedmsg = driver.findElement(By.xpath("//div[@class=\"login-container\"]/h2"));
 
+        String loggedMsgText = loggedmsg.getText();
+        //Hello OKRAJ,
 
+        Assert.assertEquals(loggedMsgText,"Hello " + Username1 +",");
+        System.out.println("Hello " + Username1 +"," );
 
-        //driver.close();
+        driver.close();
     }
 }
