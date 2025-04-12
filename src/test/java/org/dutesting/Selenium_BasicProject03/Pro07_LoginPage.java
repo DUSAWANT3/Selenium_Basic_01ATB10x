@@ -48,6 +48,31 @@ public class Pro07_LoginPage {
 
         Assert.assertEquals(errorMsg.getText(),"* Incorrect username or password","No error message element found");
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
+        //Click on Forgot Password but
+        WebElement ForgotPassBut = driver.findElement(By.xpath("//*[@class=\"forgot-pwd-container\"]/a"));
+        ForgotPassBut.click();
+        //Verify  the "Forgot password" page open
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
+        WebElement forgotPassPage= driver.findElement(By.xpath("//h2[text()='Forgot password']"));
+        System.out.println(forgotPassPage.getText());
+        //Assert.assertEquals(forgotPassPage.getText(),"Forgot password");
+
+        //click on Reset login but
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
+        driver.findElement(By.xpath("//div[@class=\"forgot-pwd-btn-conainer\"]/button[2]")).click();
+
+        WebElement passkey = driver.findElement(By.xpath("//p[@class=\"infoMsg\"]"));
+        System.out.println(passkey.getText());
+
+        //Captcher and store the password and all msg in Password
+        String Password = new String(passkey.getText());
+
+
+
         driver.close();
     }
 }
