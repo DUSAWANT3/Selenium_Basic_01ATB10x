@@ -20,8 +20,6 @@ public class Pro07_LoginPage {
            //login with invalid id captcher the error message
         //Click on forgot password and captcher the password and use for loin
         //Verify when user login succesfull the user ID should be match in loginn msg
-
-
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
