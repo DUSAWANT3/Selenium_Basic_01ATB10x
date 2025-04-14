@@ -23,6 +23,7 @@ public class Pro07_LoginPage {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
+
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
 
         long time = 2;
