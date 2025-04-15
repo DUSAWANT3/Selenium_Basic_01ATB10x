@@ -22,6 +22,7 @@ public class Ex08_AutoSuggestiveDropdown {
         WebElement inputBox = driver.findElement(By.id("autosuggest"));
         inputBox.sendKeys("Ind");
 
+
         // Wait for suggestions to load
         try {
             Thread.sleep(2000); // Not recommended in real projects, use WebDriverWait instead
