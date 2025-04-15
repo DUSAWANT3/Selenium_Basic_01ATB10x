@@ -19,9 +19,7 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
     //Match and click the correct option if it matches the expected value.
     //Verify the selected value in the input field.
 
-
     public void HaandleDropdon() throws InterruptedException {
-
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
@@ -37,7 +35,6 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
 
         // Step 3: Print all suggested values and select the desired one
         String expectedValue = "Independence";
-        boolean isMatched = false;
 
         for (WebElement suggestion : suggestions) {
             String suggestionText = suggestion.getText();
@@ -45,17 +42,15 @@ public class Ex04_Auto_Suggest_DynamicDropdown {
 
             if (suggestionText.equalsIgnoreCase(expectedValue)) {
                 suggestion.click();
-                isMatched = true;
                 break;
             }
-
         }
+
         // Step 4: Verify if the correct value is selected
         String selectedValue = SearchBox.getAttribute("value");
         Assert.assertEquals(selectedValue, expectedValue, "Selected value does not match expected!");
 
         // Close browser
         driver.quit();
-
     }
 }
