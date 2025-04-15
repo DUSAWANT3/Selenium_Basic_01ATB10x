@@ -13,7 +13,7 @@ import java.util.List;
 public class Ex08_AutoSuggestiveDropdown {
     @Test
     @Description("Verify and select Dropdown Box")
-    public void handleDropdownSuggestion() {
+    public void handleDropdownSuggestion() throws InterruptedException {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
@@ -22,13 +22,7 @@ public class Ex08_AutoSuggestiveDropdown {
         WebElement inputBox = driver.findElement(By.id("autosuggest"));
         inputBox.sendKeys("Ind");
 
-
-        // Wait for suggestions to load
-        try {
-            Thread.sleep(2000); // Not recommended in real projects, use WebDriverWait instead
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(2000);
 
         // Get all the suggested list items
         List<WebElement> options = driver.findElements(By.xpath("//li[@class='ui-menu-item']/a"));
