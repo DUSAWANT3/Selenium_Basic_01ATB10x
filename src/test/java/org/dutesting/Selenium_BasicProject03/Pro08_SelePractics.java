@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -64,6 +65,26 @@ public class Pro08_SelePractics {
         Assert.assertTrue(alertMsg.contains(name)); //Verify the alert msg contain Name
         //accept the alert
         driver.switchTo().alert().accept();
+
+        //Task 4- Static Dropdown
+        WebElement staticDropdown = driver.findElement(By.id("dropdown-class-example"));
+        staticDropdown.click();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+
+        Select select = new Select(staticDropdown);
+        select.selectByIndex(2);
+        System.out.println(select.getFirstSelectedOption().getText());
+        //count of all options
+        System.out.println(select.getOptions().size());
+
+        // Get all options
+        List<WebElement> options = select.getOptions();
+        // Print each option text
+        for (WebElement option : options) {
+            System.out.println(option.getText());
+        }
+
 
         driver.quit();
     }
