@@ -85,6 +85,22 @@ public class Pro08_SelePractics {
             System.out.println(option.getText());
         }
 
+        //Task 5- Autosuggestive dropdown
+        WebElement inputBox = driver.findElement(By.id("autocomplete"));
+        inputBox.sendKeys("Ja");
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+
+        List<WebElement> autoSuggestions = driver.findElements(By.xpath("//div[@class=\"ui-menu-item-wrapper\"]"));
+        for(WebElement option : autoSuggestions){
+            System.out.println(option.getText());
+            if(option.getText().equalsIgnoreCase("Japan")){
+                option.click();
+            }
+        }
+        System.out.println(inputBox.getText());
+
+
 
         driver.quit();
     }
