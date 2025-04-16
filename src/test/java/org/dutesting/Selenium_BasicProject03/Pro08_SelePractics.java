@@ -92,15 +92,12 @@ public class Pro08_SelePractics {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         List<WebElement> autoSuggestions = driver.findElements(By.xpath("//div[@class=\"ui-menu-item-wrapper\"]"));
-        for(WebElement option : autoSuggestions){
-            System.out.println(option.getText());
-            if(option.getText().equalsIgnoreCase("Japan")){
+        for (WebElement option : autoSuggestions) {
+            if (option.getText().equalsIgnoreCase("Japan")) {
+                System.out.println(option.getText());
                 option.click();
             }
         }
-        System.out.println(inputBox.getText());
-
-
 
         driver.quit();
     }
