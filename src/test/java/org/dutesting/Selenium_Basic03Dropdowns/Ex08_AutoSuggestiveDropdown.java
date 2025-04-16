@@ -31,7 +31,6 @@ public class Ex08_AutoSuggestiveDropdown {
         for (WebElement option : options) {
             System.out.println(option.getText());
         }
-
         // Select "India" from the suggestions
         for (WebElement option : options) {
             if (option.getText().equalsIgnoreCase("India")) {
@@ -39,7 +38,6 @@ public class Ex08_AutoSuggestiveDropdown {
                 break;
             }
         }
-
         // Close the browser
         driver.quit();
     }
