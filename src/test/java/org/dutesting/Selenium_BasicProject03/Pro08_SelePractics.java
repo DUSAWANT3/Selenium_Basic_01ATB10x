@@ -8,12 +8,13 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Pro08_SelePractics {
     @Test
     @Description("Verify and practics the web elements Box")
-    public void HaandleDropdon1() {
+    public void HaandleDropdon1() throws InterruptedException {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
 
@@ -49,7 +50,22 @@ public class Pro08_SelePractics {
             }
         }
 
-        //Task -3 Alert
+        //Task -3 Alert simple alert
+        String name = "Durgesh";
+        driver.findElement(By.id("name")).sendKeys(name);
+        //Click on alert button
+        WebElement alertBut = driver.findElement(By.id("alertbtn"));
+        alertBut.click();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
+        String alertMsg = driver.switchTo().alert().getText();
+        System.out.println(alertMsg);
+        Assert.assertTrue(alertMsg.contains(name)); //Verify the alert msg contain Name
+        //accept the alert
+        driver.switchTo().alert().accept();
+
+        driver.quit();
     }
 }
 
