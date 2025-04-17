@@ -24,6 +24,8 @@ public class Exo1_GreenKart {
         //Here we can ot directly find out the particular Add to Cart button --shoa 30 matches??
         //Firstly take all product name on page and then get indexes for that
         //Using this because in future some product add/delete no impact i=on script
+        //We convert the String[] array to a List<String>
+        //the List interface in Java provides useful methods like contains() — which is not available for plain arrays (String[]).
 
         int j = 0;
         // Items to be added in the cart
@@ -39,7 +41,8 @@ public class Exo1_GreenKart {
             // Format: Brocolli - 1 Kg => we split and trim to get only name
             String formatedName = productName[0].trim();
 
-            List itemNeededList = Arrays.asList(itemsNeeded);
+            List itemNeededList = Arrays.asList(itemsNeeded);//Convert String array into list
+
             if (itemNeededList.contains(formatedName)) {
                 j++;
                 driver.findElements(By.xpath("//div[@class=\"product-action\"]/button")).get(i).click();
