@@ -20,9 +20,12 @@ public class Ex06_fileUpload2 {
 
         driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();
 
+
         //verify massage
         WebElement msg = driver.findElement(By.id("singleFileStatus"));
         System.out.println(msg.getText());
+
+        driver.quit();
     }
 }
 
