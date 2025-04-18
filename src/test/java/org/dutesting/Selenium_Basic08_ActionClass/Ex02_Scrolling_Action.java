@@ -19,17 +19,22 @@ public class Ex02_Scrolling_Action {
         driver.manage().window().maximize();
        Thread.sleep(2000);
 
+        WebElement element = driver.findElement(By.id("submit"));
+
         //1.	JavaScriptExecutor (most used)
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 500);"); //scroll down 5oopx
 
-       //2.	Actions class
+        //Scroll by Specific element View
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+        //2.	Actions class
         Actions actions = new Actions(driver);
        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).build().perform();
 
         //3.	Keys class (Page Down, Arrow Keys)
-        WebElement element = driver.findElement(By.id("submit"));
         element.sendKeys(Keys.PAGE_DOWN);
 
+        driver.quit();
     }
 }
