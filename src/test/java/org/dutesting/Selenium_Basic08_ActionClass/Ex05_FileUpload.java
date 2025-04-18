@@ -29,8 +29,8 @@ public class Ex05_FileUpload {
 // Step 2: Click Upload But
         driver.findElement(By.xpath("//button[@type=\"button\"]")).click();
 
-  //Step 3- validation
-     WebElement massage = driver.findElement(By.id("upload-message"));
+ //Step 3- validation
+        WebElement massage = driver.findElement(By.id("upload-message"));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(massage));
