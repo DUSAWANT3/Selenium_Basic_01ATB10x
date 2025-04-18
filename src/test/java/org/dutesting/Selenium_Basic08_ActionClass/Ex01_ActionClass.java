@@ -28,10 +28,9 @@ public class Ex01_ActionClass {
 
         Actions actions = new Actions(driver);
        actions
-               .keyDown(Keys.SHIFT)
+               .keyDown(Keys.SHIFT) //Press the Shift but
                .sendKeys(firstName,"durgesh")
-               .keyUp(Keys.SHIFT).build().perform();
-
+               .keyUp(Keys.SHIFT).build().perform(); //key Up- release the But
 
     }
 }
