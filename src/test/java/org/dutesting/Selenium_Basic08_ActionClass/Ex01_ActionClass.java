@@ -15,7 +15,7 @@ public class Ex01_ActionClass {
 
     @Test
     @Description("Verify and Validate Action Class")
-    //GreenCart is E-commerce website
+
     public void ActionClass() throws InterruptedException {
         WebDriver driver = new EdgeDriver();
         driver.get("https://demoqa.com/text-box"); //URL
