@@ -17,8 +17,6 @@ public class Pro09_browserstackFileUpload {
         driver.findElement(By.id("user_email_login")).sendKeys("duonline02@gmail.com");
         driver.findElement(By.id("user_password")).sendKeys("Abc@123");
         driver.findElement(By.id("user_submit")).click();
-
-
     }
 }
 
