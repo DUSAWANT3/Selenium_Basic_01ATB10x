@@ -27,7 +27,7 @@ public class Ex01_Windows {
         for(String handle : allWindows){
             if(!handle.equals(parrentWindow)){
                 driver.switchTo().window(handle);
-                System.out.println("Switched to new Window "+ driver.getTitle() );
+                System.out.println("Switched to new Window "+ driver.getCurrentUrl());
                 System.out.println(driver.findElement(By.id("sampleHeading")).getText());
                 driver.close(); //Close Child window
             }
