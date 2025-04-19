@@ -19,7 +19,6 @@ public class Ex02_Windows {
 
         String parrantWindow = driver.getWindowHandle();//to save the current window ID
 
-        //driver.findElement(By.id("tabButton")).click();  //open new tab
         driver.findElement(By.id("windowButton")).click(); //Open new child window
 
         Set<String> allWindows = driver.getWindowHandles();
@@ -29,9 +28,12 @@ public class Ex02_Windows {
                 driver.switchTo().window(handle);
                 System.out.println(driver.findElement(By.id("sampleHeading")).getText());
                 System.out.println("Pass");
-                //driver.close();
+                driver.close();
             }
         }
         driver.switchTo().window(parrantWindow);
+        driver.findElement(By.id("tabButton")).click();  //open new tab
+
+        driver.quit();
     }
 }
