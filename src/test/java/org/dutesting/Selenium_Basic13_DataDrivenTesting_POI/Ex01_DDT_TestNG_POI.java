@@ -8,10 +8,6 @@ import org.testng.annotations.Test;
 public class Ex01_DDT_TestNG_POI {
     @Test(dataProvider = "getData")
     public void iframe(String email,String password) {
-        WebDriver driver = new EdgeDriver();
-        driver.manage().window().maximize();
-
-       // driver.get("https://demoqa.com/frames");
 
         System.out.println(email + " _ " +password);
     }
