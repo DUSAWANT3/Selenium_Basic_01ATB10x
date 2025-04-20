@@ -24,7 +24,7 @@ public class Ex01_handleShadowDom {
         WebElement shadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", shadowHost);
 
         // Step 3: Find element inside shadow DOM
-        WebElement input = shadowRoot.findElement(By.id("input"));
+        WebElement input = shadowRoot.findElement(By.cssSelector("input#input"));
 
         input.sendKeys("Durgesh rocks!");
 
