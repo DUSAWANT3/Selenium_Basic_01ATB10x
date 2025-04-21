@@ -51,7 +51,6 @@ public class Pro10_E2E_RS {
         for (WebElement but : addBut){
             but.click();
         }
-
         //click on checkout
         driver.findElement(By.xpath("//a[@class=\"nav-link btn btn-primary\"]")).click();
 
