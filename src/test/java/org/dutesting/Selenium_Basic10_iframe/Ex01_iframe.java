@@ -10,7 +10,7 @@ public class Ex01_iframe {
 
     @Test
     public void iframe() {
-//An iframe (inline frame) is an HTML document embedded inside another HTML document.
+//An DDT (inline frame) is an HTML document embedded inside another HTML document.
         //•	You’re seeing content from another webpage inside your current page
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();

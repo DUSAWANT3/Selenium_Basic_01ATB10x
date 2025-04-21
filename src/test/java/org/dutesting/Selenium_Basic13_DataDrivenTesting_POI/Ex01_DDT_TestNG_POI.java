@@ -1,13 +1,12 @@
 package org.dutesting.Selenium_Basic13_DataDrivenTesting_POI;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class Ex01_DDT_TestNG_POI {
+
     @Test(dataProvider = "getData")
-    public void DDT(String email,String password) {
+    public void DDT(String email, String password) {
 
         System.out.println(email + " _ " +password);
     }
