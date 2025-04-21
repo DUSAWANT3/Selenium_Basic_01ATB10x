@@ -7,12 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-public class Exo1_GreenKart {
-
+public class Ex02_GreenKart_2 {
     @Test
     @Description("Verify and Add Items in Cart")
     //GreenCart is E-commerce website
@@ -27,10 +25,19 @@ public class Exo1_GreenKart {
         //We convert the String[] array to a List<String>
         //the List interface in Java provides useful methods like contains() — which is not available for plain arrays (String[]).
 
-        int j = 0;
         // Items to be added in the cart
         String[] itemsNeeded = {"Brocolli", "Cucumber", "Beetroot", "Mango"};
 
+        addToCart(driver,itemsNeeded);
+
+
+
+
+
+        //driver.quit();
+    }
+    public static void addToCart(WebDriver driver, String[] itemsNeeded) throws InterruptedException {
+        int j = 0;
         // Capture all product names on the page
         List<WebElement> itemNames = driver.findElements(By.xpath("//h4[@class=\"product-name\"]"));
 
@@ -51,7 +58,5 @@ public class Exo1_GreenKart {
                 }
             }
         }
-        driver.quit();
     }
 }
-
