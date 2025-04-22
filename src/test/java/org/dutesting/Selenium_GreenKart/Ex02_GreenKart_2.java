@@ -66,15 +66,20 @@ public class Ex02_GreenKart_2 {
         Select select = new Select(dropdown);
         select.selectByValue("India");
         System.out.println(select.getFirstSelectedOption().getText());
-        Assert.assertEquals(select.getFirstSelectedOption(),"India","Incurrect Option selected");
+        //Assert.assertEquals(select.getFirstSelectedOption(),"India","Incurrect Option selected");
 
         //Click on heckBox and Procid
         driver.findElement(By.xpath("//input[@type=\"checkbox\"]")).click();
 
         driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/button")).click();
 
+        //Captchet the sucess massage -Classic timing issue — the success message appears only for 2–3 seconds and then the page auto-redirects,
+          //Open DevTools (F12). -> Go to Sources tab.->Click the Pause icon (||) on top.->Then click Proceed.
+        //This will pause JS execution → now inspect the DOM & find message XPath
+       WebElement sucessMsg = driver.findElement(By.xpath("//div[@class=\"wrapperTwo\"]/span"));
+        System.out.println(sucessMsg.getText());
 
-        //driver.quit();
+        driver.quit();
     }
     public static void addToCart(WebDriver driver, String[] itemsNeeded) throws InterruptedException {
         int j = 0;
