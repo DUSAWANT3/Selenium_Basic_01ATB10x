@@ -23,7 +23,7 @@ public class Ex01_Count_Links_onWebpage {
         //Method 1- Direct - Find all the elements with tag name 'a'
         System.out.println("Links Present on webpage is = " + driver.findElements(By.tagName("a")).size());
 
-//2. Count the links on footer
+//2. Count the links on present on footer
         WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
         List<WebElement> footerLinks = footerDriver.findElements(By.tagName("a"));
         System.out.println("Links Present on webpage footer = " + footerLinks.size());
@@ -43,7 +43,7 @@ public class Ex01_Count_Links_onWebpage {
         for (int i = 1; i < footerfirstColumnLinks.size(); i++) {
             String clickOnLinkTab = Keys.chord(Keys.CONTROL, Keys.ENTER);
             footerfirstColumnLinks.get(i).sendKeys(clickOnLinkTab);
-            Thread.sleep(5000);
+           // Thread.sleep(5000);
         }
         Set<String> allTabs = driver.getWindowHandles();
 
