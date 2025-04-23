@@ -34,7 +34,7 @@ public class Ex02_GreenKart_2 {
         //the List interface in Java provides useful methods like contains() — which is not available for plain arrays (String[]).
 
         // Items to be added in the cart
-        String[] itemsNeeded = {"Brocolli", "Cucumber", "Beetroot", "Mango"};
+        String[] itemsNeeded = {"Brocolli", "Cucumber", "Beetroot", "Mango", "Water Melon"};
 
         addToCart(driver,itemsNeeded);
         //Click on kart button

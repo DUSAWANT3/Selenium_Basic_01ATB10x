@@ -17,8 +17,8 @@ public class Pro11_RS_Assisment7 {
         driver.get("https://rahulshettyacademy.com/AutomationPractice/"); //URL
         driver.manage().window().maximize();
 
-    //Task table count the   rows and coloums
-        List<WebElement> tableRows =driver.findElements(By.xpath("//table[@name=\"courses\"]//tr"));
+        //Task table count the   rows and coloums
+        List<WebElement> tableRows = driver.findElements(By.xpath("//table[@name=\"courses\"]//tr"));
         System.out.println("Total count of row = " + tableRows.size());
 
         List<WebElement> tableColoums = driver.findElements(By.xpath("//table[@name=\"courses\"]//tr"))
@@ -26,7 +26,7 @@ public class Pro11_RS_Assisment7 {
                 .findElements(By.tagName("td"));
         System.out.println("Total count of row = " + tableColoums.size());
 
-     //Print 2nd row values
+        //Print 2nd row values
         System.out.println(tableColoums.get(0).getText());
         System.out.println(tableColoums.get(1).getText());
         System.out.println(tableColoums.get(2).getText());
