@@ -20,18 +20,18 @@ public class Ex07_Scrolling_RS {
         driver.get("https://rahulshettyacademy.com/AutomationPractice/"); //URL
         driver.manage().window().maximize();
 
-     //Scroll the page
+        //Scroll the page
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)");
         //Thread.sleep(3000);
-    //Scroll the inner table
+        //Scroll the inner table
         js.executeScript("document.querySelector('.tableFixHead').scrollTop=5000");
 
-    //In table column 4 calculate the Amount and verify with Given Amount
+        //In table column 4 calculate the Amount and verify with Given Amount
         //tr =row  td =coloumn
         List<WebElement> amount = driver.findElements(By.xpath("//div[@class=\"tableFixHead\"]//tr/td[4]"));
-       int sum = 0;
-        for(int i=0; i<amount.size();i++){
+        int sum = 0;
+        for (int i = 0; i < amount.size(); i++) {
             sum = sum + Integer.parseInt(amount.get(i).getText());
         }
         System.out.println(sum);
@@ -41,7 +41,7 @@ public class Ex07_Scrolling_RS {
         int actualAmount = Integer.parseInt(totalAmount.getText().split(": ")[1].trim());
         System.out.println(actualAmount);
 
-        Assert.assertEquals(actualAmount,sum,"Amount not match!");
+        Assert.assertEquals(actualAmount, sum, "Amount not match!");
 
         driver.quit();
     }
