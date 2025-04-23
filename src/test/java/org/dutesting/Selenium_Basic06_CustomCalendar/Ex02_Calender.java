@@ -1,10 +1,13 @@
 package org.dutesting.Selenium_Basic06_CustomCalendar;
 
-import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class Ex02_Calender {
 
@@ -18,6 +21,7 @@ public class Ex02_Calender {
         String monthNumber = "6";
         String date = "15";
         String year ="2027";
+        String[] expectedList = {monthNumber, date, year};
 
         //Click to Open a calendar window
         driver.findElement(By.xpath("//div[@class=\"react-date-picker__inputGroup\"]")).click();
@@ -30,9 +34,16 @@ public class Ex02_Calender {
         driver.findElement(By.xpath("//button[text()='" + year + "']")).click();
         //Select Month findElements
         driver.findElements(By.xpath("//button[contains(@class,'react-calendar__year-view__months__month')]")).get(Integer.parseInt(monthNumber)-1).click();
-
         //Select date
         driver.findElement(By.xpath("//abbr[text()="+ date +"]")).click();
 
+        //Assertion And Varifacation
+        List<WebElement> actualList = driver.findElements(By.xpath("//input[contains(@class,'react-date-picker__inputGroup__input')]"));
+        for(int i =0; i<actualList.size(); i++){
+            String actualValue = actualList.get(i).getDomAttribute("Value");
+            System.out.println(actualValue);
+            Assert.assertEquals(actualValue,expectedList[i]);
+        }
+        driver.quit();
     }
 }
