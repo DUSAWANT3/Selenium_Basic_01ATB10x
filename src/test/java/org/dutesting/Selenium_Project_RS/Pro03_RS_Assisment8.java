@@ -1,4 +1,4 @@
-package org.dutesting.Selenium_BasicProject03;
+package org.dutesting.Selenium_Project_RS;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Pro12_RS_Assisment8 {
+public class Pro03_RS_Assisment8 {
 
     @Test
     //GreenCart is E-commerce website

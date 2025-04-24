@@ -1,4 +1,4 @@
-package org.dutesting.Selenium_BasicProject03;
+package org.dutesting.Selenium_Project_RS;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,10 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
-import java.sql.SQLOutput;
 import java.util.List;
 
-public class Pro11_RS_Assisment7 {
+public class Pro02_RS_Assisment7 {
     @Test
     //GreenCart is E-commerce website
     public void assisment7() throws InterruptedException {

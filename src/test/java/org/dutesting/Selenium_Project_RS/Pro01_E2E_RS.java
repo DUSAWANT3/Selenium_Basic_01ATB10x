@@ -1,4 +1,4 @@
-package org.dutesting.Selenium_BasicProject03;
+package org.dutesting.Selenium_Project_RS;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Pro10_E2E_RS {
+public class Pro01_E2E_RS {
     @Test
 
     public void fileUpload() {
