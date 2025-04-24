@@ -25,6 +25,10 @@ public class Ex01_takesScreenshot {
         //alternative provided by Selenium itself to save ss
         FileHandler.copy(src, new File("D:\\SeleniumSS\\screenshot2.png"));
 
+        //To save SS as per time stmp
+        String  dest = ("D:\\SeleniumSS\\screenshot1");
+        FileHandler.copy(src, new File(dest + System.currentTimeMillis() + ".png"));
+
         driver.quit();
     }
 }
