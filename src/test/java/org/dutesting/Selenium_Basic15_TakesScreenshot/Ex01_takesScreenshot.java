@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 
 public class Ex01_takesScreenshot {
     @Test
@@ -28,6 +29,9 @@ public class Ex01_takesScreenshot {
         //To save SS as per time stmp
         String  dest = ("D:\\SeleniumSS\\screenshot1");
         FileHandler.copy(src, new File(dest + System.currentTimeMillis() + ".png"));
+
+        System.out.println(java.time.LocalDateTime.now());//2025-04-24T17:47:22.460166
+        //file name not contain special cheracter so not file fond exception
 
         driver.quit();
     }
