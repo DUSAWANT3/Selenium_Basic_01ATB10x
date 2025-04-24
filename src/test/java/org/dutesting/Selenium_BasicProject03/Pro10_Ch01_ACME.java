@@ -38,9 +38,10 @@ public class Pro10_Ch01_ACME {
             System.out.println(rawAmount);
 
             // Remove "USD", trim, and handle +/-
-            String numericPart = rawAmount.replace("USD", "").trim()
-                    .replace(",", "")
-                    .replaceAll("\\s+", "");;
+            String numericPart = rawAmount.replace("USD", "").trim() //Removes the currency symbol "USD" from the string.
+                                                                                       // Removes leading and trailing white spaces.
+                    .replace(",", "")    //Removes commas from numbers.
+                    .replaceAll("\\s+", "");//Removes all remaining whitespace (if any) from the string.
             //String numericPart = rawAmount.split(" ")[0].trim();
 
             double spendAmount = Double.parseDouble(numericPart); // This will work even for negative values
