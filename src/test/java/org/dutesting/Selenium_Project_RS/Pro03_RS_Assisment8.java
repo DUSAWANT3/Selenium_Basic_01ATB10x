@@ -1,20 +1,21 @@
 package org.dutesting.Selenium_Project_RS;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class Pro03_RS_Assisment8 {
 
     @Test
     //GreenCart is E-commerce website
-    public void assisment8() throws InterruptedException {
+    public void assisment8() throws InterruptedException, IOException {
         WebDriver driver = new EdgeDriver();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/"); //URL
         driver.manage().window().maximize();
@@ -53,6 +54,11 @@ public class Pro03_RS_Assisment8 {
         WebElement selectIndia = driver.findElement(By.xpath("//div[@class=\"ui-menu-item-wrapper\"][text()='India']"));
         selectIndia.click();
         System.out.println(searchbox.getText());
+
+       File src =  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(src , new File("D:\\SeleniumSS\\screenshot1.png"));
+
+        FileHandler.copy(src, new File("D:\\SeleniumSS\\screenshot.png"));
 
         driver.quit();
     }
