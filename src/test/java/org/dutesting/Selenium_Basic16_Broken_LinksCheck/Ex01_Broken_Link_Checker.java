@@ -26,7 +26,7 @@ public class Ex01_Broken_Link_Checker {
         //•	If it's 400 or above, it's a broken link.
         //•	Developer tool >> Network tab >> Select XHR
 
-        List<WebElement> links = driver.findElements(By.tagName("a"));
+        List<WebElement> links = driver.findElements(By.xpath("//li[@class=\"gf-li\"]/a"));
         System.out.println("Total links = " + links.size());
 
         for (WebElement link : links) {
