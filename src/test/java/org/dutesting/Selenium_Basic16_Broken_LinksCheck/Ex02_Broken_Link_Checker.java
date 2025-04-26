@@ -47,7 +47,6 @@ public class Ex02_Broken_Link_Checker {
                 System.out.println("The link with text - " + brokenLink + " broken status code " + respCode);
             }
         }
-
         softassert.assertAll();
         driver.quit();
     }
