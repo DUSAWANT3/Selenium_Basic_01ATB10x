@@ -20,6 +20,7 @@ public class Ex01_iframe {
         //move to or Switch to frame
         WebElement iframe = driver.findElement(By.id("frame1"));
         driver.switchTo().frame(iframe);
+
         //Perform action on frame
         System.out.println(driver.findElement(By.xpath("//*[@id=\"sampleHeading\"]")).getText());
 
