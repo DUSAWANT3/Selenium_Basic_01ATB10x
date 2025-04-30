@@ -1,6 +1,5 @@
 package org.dutesting.Selenium_Basic17_StrimLamda;
 
-import io.qameta.allure.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,7 +29,7 @@ public class Ex01_WebTable_Shrting_JavaSteams {
         //Compare Original and Sorted list
         Assert.assertEquals(originalList, sortedList);
 
-//Scan the name column with get text --if it "Beans" -- print thr Prise
+//Scan the name column with get text --if it "Beans" -- print the Prise
         //if the Veggi not found in first page click on Next button and search use Do While  loop
         List<String> price;
         do {
