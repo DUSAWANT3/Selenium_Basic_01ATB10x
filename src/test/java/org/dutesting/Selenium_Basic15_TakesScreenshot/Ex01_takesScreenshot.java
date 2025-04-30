@@ -1,9 +1,7 @@
 package org.dutesting.Selenium_Basic15_TakesScreenshot;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
@@ -32,6 +30,15 @@ public class Ex01_takesScreenshot {
 
         System.out.println(java.time.LocalDateTime.now());//2025-04-24T17:47:22.460166
         //file name not contain special cheracter so not file fond exception
+
+        WebElement nameField = driver.findElement(By.xpath("//*[@id=\"autocomplete\"]"));
+ //Captcher  WebElement Screenshot
+        //File src = nameField.getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(src, new File("D:\\SeleniumSS\\screenshot8.png"));
+
+      //  FileUtils.copyFile(src, new File("Logo1.png"));
+        //Store SS in Selenium file
+
 
         driver.quit();
     }
