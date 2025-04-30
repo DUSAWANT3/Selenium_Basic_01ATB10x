@@ -16,7 +16,7 @@ public class Ex01_takesScreenshot {
         WebDriver driver = new EdgeDriver();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/"); //URL
         driver.manage().window().maximize();
-
+//Full window SS
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         // Take screenshot  Apache Commons IO's to save ss
         FileUtils.copyFile(src, new File("D:\\SeleniumSS\\screenshot1.png"));
@@ -33,12 +33,11 @@ public class Ex01_takesScreenshot {
 
         WebElement nameField = driver.findElement(By.xpath("//*[@id=\"autocomplete\"]"));
  //Captcher  WebElement Screenshot
-        //File src = nameField.getScreenshotAs(OutputType.FILE);
-        FileHandler.copy(src, new File("D:\\SeleniumSS\\screenshot8.png"));
+        File src1 = nameField.getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(src1, new File("D:\\SeleniumSS\\screenshot8.png"));
 
-      //  FileUtils.copyFile(src, new File("Logo1.png"));
+        FileUtils.copyFile(src1, new File("Logo1.png"));
         //Store SS in Selenium file
-
 
         driver.quit();
     }
