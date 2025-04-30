@@ -8,9 +8,12 @@ public class Ex01 {
 //TestNG Basic Syntax:
 
     //Sequen -> (Before) Suit - test - class -Method
+    @Parameters({"url"}) //get data from testng.xml file
+                         //<parameter name="url" value="https://www.google.com/"></parameter>
     @Test
-    public void sayHello() {
+    public void sayHello(String url) {
         System.out.println("1 Hello from TestNG!");
+        System.out.println(url);
     }
 
     @Test
@@ -37,10 +40,28 @@ public class Ex01 {
     public void afterSuitTest(){
         System.out.println("After Suit Test case");
     }
-    //Before Suit Test case
-    //Before Test case
-    //1 Hello from TestNG!
-    //2 Test case
-    //After Test case
-    //After Suit Test case
+
+    //Data Driven testing - verify login functionality using multipal data set
+    @Test (dataProvider = "getData")
+    public void loginpage(String username , String password){
+        System.out.println("loginpage");
+        System.out.println(username);
+        System.out.println(password);
+    }
+
+    //3- how may data set rows
+    //2 how many value passing column
+    @DataProvider
+    public Object[][] getData() {
+       Object[][] data = new Object[3][2];
+       data[0][0] = "firstsetusername";
+        data[0][1] = "firstssetpasswoed";
+        //2nd data set
+        data[1][0] = "secondtsetusername";
+        data[1][1] = "secondsetpasswoed";
+        //3rd data set
+        data[2][0] = "thiredsetusername";
+        data[2][1] = "thiredsetpasswoed";
+        return data;
+    }
 }
