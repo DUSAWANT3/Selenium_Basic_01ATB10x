@@ -15,7 +15,6 @@ public class Ex02_Listeners implements ITestListener {   //Ctrl + I
         System.out.println("onTestSuccess");
     }
 
-
     @Override
     public void onTestFailure(ITestResult result) {
         ITestListener.super.onTestFailure(result);
