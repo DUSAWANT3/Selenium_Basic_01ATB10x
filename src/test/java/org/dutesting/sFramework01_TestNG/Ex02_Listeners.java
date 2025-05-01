@@ -1,7 +1,5 @@
 package org.dutesting.sFramework01_TestNG;
 
-
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
