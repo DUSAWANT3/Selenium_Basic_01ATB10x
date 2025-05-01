@@ -7,9 +7,9 @@ import org.testng.annotations.*;
 public class Ex01 {
 //TestNG Basic Syntax:
 
-    //Sequen -> (Before) Suit - test - class -Method
+    //Sequen -> (Before) Suit - test - class -Method--@Test
     @Parameters({"url"}) //get data from testng.xml file
-                         //<parameter name="url" value="https://www.google.com/"></parameter>
+    //<parameter name="url" value="https://www.google.com/"></parameter>
     @Test
     public void sayHello(String url) {
         System.out.println("1 Hello from TestNG!");
@@ -17,33 +17,33 @@ public class Ex01 {
     }
 
     @Test
-    public void secondTest(){
+    public void secondTest() {
         System.out.println("2 Test case");
     }
 
     @BeforeTest
-    public void beforeTest(){
+    public void beforeTest() {
         System.out.println("Before Test case");
     }
 
     @AfterTest
-    public void afterTest(){
+    public void afterTest() {
         System.out.println("After Test case");
     }
 
     @BeforeSuite
-    public void beforeSuitTest(){
+    public void beforeSuitTest() {
         System.out.println("Before Suit Test case");
     }
 
     @AfterSuite
-    public void afterSuitTest(){
+    public void afterSuitTest() {
         System.out.println("After Suit Test case");
     }
 
     //Data Driven testing - verify login functionality using multipal data set
-    @Test (dataProvider = "getData")
-    public void loginpage(String username , String password){
+    @Test(dataProvider = "getData")
+    public void loginpage(String username, String password) {
         System.out.println("loginpage");
         System.out.println(username);
         System.out.println(password);
@@ -53,8 +53,8 @@ public class Ex01 {
     //2 how many value passing column
     @DataProvider
     public Object[][] getData() {
-       Object[][] data = new Object[3][2];
-       data[0][0] = "firstsetusername";
+        Object[][] data = new Object[3][2];
+        data[0][0] = "firstsetusername";
         data[0][1] = "firstssetpasswoed";
         //2nd data set
         data[1][0] = "secondtsetusername";
