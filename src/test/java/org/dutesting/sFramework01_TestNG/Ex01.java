@@ -41,6 +41,7 @@ public class Ex01 {
         System.out.println("After Suit Test case");
     }
 
+
     //Data Driven testing - verify login functionality using multipal data set
     @Test(dataProvider = "getData")
     public void loginpage(String username, String password) {
