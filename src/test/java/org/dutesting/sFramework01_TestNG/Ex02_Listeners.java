@@ -16,6 +16,7 @@ public class Ex02_Listeners implements ITestListener {   //Ctrl + I
         ITestListener.super.onTestFailure(result);
         //Screenshot
         System.out.println("onTestFailure");
+        System.out.println("Fail TC Name " + result.getName());
     }
 
 }
