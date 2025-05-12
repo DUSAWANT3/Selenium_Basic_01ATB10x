@@ -1,5 +1,7 @@
 package org.dutesting.Selenium_Project_RS;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,15 +9,32 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
 public class Pro01_E2E_RS {
-    @Test
+    ExtentReports extent;//Global  variable
 
+    @BeforeTest
+    public void config(){//generate HTML Repote
+        //ExtentReports, ExtentSparkReporter
+        String path  = System.getProperty("user.dir")+"\\reports\\index.html";
+        ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+        reporter.config().setReportName("Web Automation Result");
+        reporter.config().setDocumentTitle("Test Result");
+
+        extent =  new ExtentReports();
+        extent.attachReporter(reporter);
+        extent.setSystemInfo("Tester","DURGEH");
+    }
+
+    @Test
     public void fileUpload() {
+        extent.createTest("testName -Initial Demo");
+        //extent.flush(); //use at the end of last test
         WebDriver driver = new EdgeDriver();
         driver.get("https://rahulshettyacademy.com/loginpagePractise/");
         driver.manage().window().maximize();
@@ -55,5 +74,7 @@ public class Pro01_E2E_RS {
         driver.findElement(By.xpath("//a[@class=\"nav-link btn btn-primary\"]")).click();
 
         driver.quit();
+
+        extent.flush();
     }
 }
